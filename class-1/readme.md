@@ -1,3 +1,5 @@
+** PHP Variable, Constant, Data Types**
+
 ### Variable
 
 `$my_name = “Mazhar”; (snake_case) > variable`
