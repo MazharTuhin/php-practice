@@ -1,4 +1,4 @@
-** PHP Variable, Constant, Data Types**
+# PHP Variable, Constant, Data Types
 
 ### Variable
 
