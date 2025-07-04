@@ -123,4 +123,9 @@ $checkAge = ($age >= 18) ? "You are an adult!" : "You are not an adult";
 echo $checkAge;
 
 // You are not an adult
+
+$isLoggedIn = true;
+echo $isLoggedIn ? "Welcome!" : "Please login.";
+
+// Welcome
 ```
