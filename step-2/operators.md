@@ -1,6 +1,6 @@
-# PHP Comparison Operators
+# PHP Comparison Operators, Logical Operators, Increment & Decrement Operators
 
-### Comparison Operators
+## Comparison Operators
 
 `$n1 = 10;` 
 
@@ -54,7 +54,7 @@
 
 ---
 
-### Logical Operators
+## Logical Operators
 
 `and` বা `&&` (দুইটা শর্ত true হলেই কেবল true return করবে)
 
@@ -72,7 +72,7 @@
 
 ---
 
-### Increment & Decrement Operators
+## Increment & Decrement Operators
 
 **`++` (Increment Operator) (variable এর value 1 করে বৃদ্ধি করে)**
 
