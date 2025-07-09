@@ -111,6 +111,7 @@ $foods = [
 // ];
 
 // $drinksStr = join(', ', $drinks);
+// $drinksStrIm = implode(', ', $drinks); // join() & implode() একই কাজ করে
 // echo $drinksStr;
 
 #########################

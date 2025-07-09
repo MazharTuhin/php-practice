@@ -1,16 +1,19 @@
 # PHP Practice
 
-### Step 1
+## Step 1 (Variables, Data Types)
+
 - Variable
 - Constant
 - Data Types
+---
+## Step 2 (Operators)
 
-### Step 2
 - Comparison Operators
 - Logical Operators
 - Increment & Decrement Operators
+---
+## Step 3 (Operators and Conditional Statement)
 
-### Step 3
 **3.1**
 - String Operators
 - Null Coalescing Operator
@@ -19,16 +22,18 @@
 - If..elseif
 - switch..case
 - Ternary Operator
+---
+## Step 4 (Loops)
 
-## Step 4
 - for loop 
 - while loop
 - do…while loop 
 - foreach loop
 - break statement 
 - continue statement
+---
+## Step 5 (Function)
 
-## Step 5
 ### **5.1 Function
 - return statement
 - Default value of parameter
@@ -42,14 +47,15 @@
 - Anonymous Function
 - Arrow Function
 - Callback Function
+---
+## Step 6 (Array)
 
-## Step 6
-
-### 6.1 PHP Array
 - Array
 - Indexed Array
     - Indexed Array Manipulation (`array_pop()`, `array_push()`, `array_shift()`, `array_unshift()`)
 - Associative Array
-    - String to Array, Array to String (`explode()`, `preg_split()`, `join()`)
+    - String to Array, Array to String (`explode()`, `preg_split()`, `join()`, `implode()`)
 - Multidimensional Array
 - Array to String (`serialize()`, `unserialize()`, `json_encode()`, `json_decode()`)
+
+## Step 7 (Array)
