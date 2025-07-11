@@ -369,15 +369,10 @@ if ($toss % 2 == 0) {
 
 $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
-echo "Main Array: ", "\n";
-print_r($numbers);
-
 shuffle($numbers);
-echo "Shuffled Array: ", "\n";
 print_r($numbers);
 
 $fruits = ['Apple', 'Banana', 'Mango', 'Pineapple', 'Orange'];
 
 shuffle($fruits);
-
 print_r($fruits);
