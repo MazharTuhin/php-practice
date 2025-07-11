@@ -315,7 +315,7 @@ print_r($electronics);
 
 ################################
 ## array_reduce()
-
+/*
 $numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 
 // function sum($oldValue, $newValue) {
@@ -334,3 +334,50 @@ function sumEven($oldValue, $newValue) {
 
 $sum = array_reduce($numbers, 'sumEven');
 echo $sum;
+*/
+
+#####################
+## range()
+/*
+$numbers = range(0,30, 2);
+
+foreach($numbers as $number) {
+    if ($number > 0) {
+        echo $number, "\n";
+    }
+}
+*/
+
+#######################
+## Random numbers and shuffle array
+
+## mt_rand()
+/*
+$numbers = range(10, 50);
+$random = mt_rand(0, 40);
+
+// echo $numbers[$random]; 
+$toss = $numbers[$random];
+if ($toss % 2 == 0) {
+	echo "Head";
+} else {
+	echo "Tail";
+}
+*/
+
+## shuffle()
+
+$numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+echo "Main Array: ", "\n";
+print_r($numbers);
+
+shuffle($numbers);
+echo "Shuffled Array: ", "\n";
+print_r($numbers);
+
+$fruits = ['Apple', 'Banana', 'Mango', 'Pineapple', 'Orange'];
+
+shuffle($fruits);
+
+print_r($fruits);
