@@ -1,0 +1,43 @@
+# PHP Control Flow Alternative Syntax
+
+PHP তে code গুলো সাধারণত উপর থেকে নিচে একের পর এক execute হয়, এটা একটা flow। এই flow কে নিয়ন্ত্রণ বা পরিবর্তন করার জন্য যে statement গুলো ইউজ করা হয় সেগুলা হচ্ছে Control Flow Statements!
+
+PHP-তে তিন ধরনের Control Flow Statements রয়েছে।
+
+1. Conditional Statements : `if`, `if...else`, `if...elseif...else` , `switch`
+2. Loops: `for`, `while`, `do...while`, `foreach`
+3. Jump Statements: `break`, `continue`, `return`
+
+এই বিষয়গুলো সম্পর্কে step-3 এবং step-4 এ জেনেছি।
+
+## আজকের টপিক: Control Flow Alternative Syntax
+
+Control Flow Statements গুলোর মধ্যে ১টা syntax common সেটা হচ্ছে `{}` (curly braces)। Alternative Syntax এ `{}` এর পরিবর্তে `:` ব্যবহার করা হয় এবং statement এর শেষে ending keyword লিখা হয়।
+
+সংক্ষেপে বললে:
+
+- `{` এর পরিবর্তে `:` বসবে
+- `}` এর পরিবর্তে ending keyword বসবে।
+
+HTML Code এর সাথে যখন PHP code লিখা হয়, তখন Alternative Syntax এ লিখা হয়। এই Syntax CMS এবং Framework গুলোও follow করে।
+
+## `if` statement
+
+```php
+## Regular Syntax
+<?php
+$age = 16;
+
+if ($age >= 18) {
+	echo "You are an adult!";
+} else {
+	echo "Your are not an adult";
+}
+?>
+## Alternative Syntax
+<?php if ($age >= 18): ?>
+    <p>Your are an adult</p>
+<?php else: ?>
+    <p>You are not an adult.</p>
+<?php endif; ?>
+```
