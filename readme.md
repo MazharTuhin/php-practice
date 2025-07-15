@@ -87,3 +87,10 @@
 - shuffle()
 
 ## Step-8 (Control Flow Alternative Syntax)
+- Control Flow
+- Alternative Syntax
+- if
+- for
+- foreach
+
+## Step-9 (String)

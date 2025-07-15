@@ -1,16 +1,14 @@
-# 6. PHP Array
+# PHP Array
 
-অনেকগুলো ডাটা যখন একটা collection এ রাখা যায়, সেটা হচ্ছে array. array তে বিভিন্ন type এর ডাটা রাখা যায়।
+অনেকগুলো ডাটা যখন একটা collection এ রাখা যায়, সেটা হচ্ছে array। array-তে বিভিন্ন type এর ডাটা একত্রে রাখা যায়। 
 
-3 ধরনের array দেখা যায়:
+PHP-তে তিন ধরনের array দেখা যায়:
 
 1. Indexed array
 2. Associative array
 3. Multidimensional array
 
-## Indexed array
-
-Indexed array তে প্রতিটি element এর value কে number দিয়ে access করা যায়। array তে এই numbering বা index শুরু হয় `0` থেকে।
+PHP তে array কে দুই ধরনের syntax এ লিখা যায়ঃ
 
 ```php
 $person = array(
@@ -23,9 +21,8 @@ $person = array(
 $person = ["Mazhar", 28, "Cumilla"];
 ```
 
-- array লিখার 2টা syntax রয়েছে।
-- সরাসরি array কে `echo` করা যায় না। `var_dump($person)` বা `print_r($person)` দিয়ে দেখা যাবে।
-- array’র প্রতিটা element এর access পেতে হলে `$person[0]` এভাবে index ধরে call করতে হবে।
+- সরাসরি array কে `echo` করা যায় না। `var_dump($person)` বা `print_r($person)` দিয়ে output দেখা যাবে।
+- array-র প্রতিটা element এর access পেতে হলে `$person[$key]` এভাবে index ধরে call করতে হবে।
 
 ```php
 $person = ["Mazhar", 28, "Cumilla" ];
@@ -50,7 +47,9 @@ foreach($person as $each) {
 }
 ```
 
-### Manipulation (Indexed array)
+## Indexed Array
+
+Indexed array তে প্রতিটি element এর value কে index number দিয়ে access করা যায়। array তে এই numbering বা index শুরু হয় `0` থেকে।
 
 **Change Data**
 
@@ -64,7 +63,7 @@ $fruits[2] = "Mango";
 print_r($fruits); // Apple Mango Jackfruit Guava
 ```
 
-**array_pop()**
+### **`array_pop()`**
 
 array হতে শেষ element টা remove করে `return` করে।
 
@@ -76,7 +75,7 @@ print_r($fruits); // শেষের element (Guava) remove হয়ে return হ
 echo $removedData; // Guava | যেহেতু return হয় তা্ই $removeData তে store হয়েছে
 ```
 
-**array_push()**
+### **`array_push()`**
 
 array এর শেষে element যুক্ত করে।
 
@@ -89,7 +88,7 @@ array_push($fruits, "Mango", "Orange", ["Date", "Lemon"]);
 print_r ($fruits); 
 ```
 
-**array_shift()**
+### **`array_shift()`**
 
 array’র শুরু থেকে ১টা element remove করে `return` করে।
 
@@ -101,7 +100,7 @@ print_r($fruits); // প্রথম element (Apple) remove হয়ে return হ
 echo $removedData; // Apple | যেহেতু return তা্ই $removeData তে store হয়েছে
 ```
 
-**array_unshift()**
+### **`array_unshift()`**
 
 array’র শুরুতে element যুক্ত করে।
 
@@ -144,11 +143,17 @@ foreach ($foods as $key => $value) {
 
 - `foreach()` লুপের মাধ্যমে সহজেই associative array তে loop চালানো যায়।
 
-এই কাজটা অন্যান্য লুপ দিয়েও করা যায়। তবে দুইটা array function সম্পর্কে জানতে হবে। 
+এই কাজটা অন্যান্য লুপ দিয়েও করা যায়। তবে কোড লেখা লাগবে বেশি। 
 
-`array_keys()` array এর key গুলো array আকারে return করে।
+দুইটা array function সম্পর্কে জানা যাক: 
 
-`array_values()` array এর value গুলো array আকারে return করে।
+### `array_keys()`
+
+array এর key গুলো array আকারে return করে।
+
+### `array_values()`
+
+array এর value গুলো array আকারে return করে।
 
 ```php
 $foods = [
@@ -170,7 +175,8 @@ for($i = 0; $i < $count; $i++) {
 ```
 
 - associative array তে `foreach()` লুপ চালানো বেটার।
-- যদিও value গুলো string এ আছে। নতুন ডাটা যদি যুক্ত করতে চাই:
+
+নতুন ডাটা যদি যুক্ত করতে চাইলে: 
 
 ```php
 // $foods['drinks'] = $foods['drinks'] . ", juice";
@@ -179,7 +185,7 @@ $foods['drinks'] .= ", juice";
 print_r($foods);
 ```
 
-### **String to Array and Array to String Operation**
+## **String to Array and Array to String Operation**
 
 **String to Array**
 
@@ -187,9 +193,11 @@ print_r($foods);
 $fruits = "Apple, Banana, Mango, Jackfruit, Guava, Dates";
 ```
 
-`$fruits` মধ্যে যে ডাটা গুলো আছে সেগুলো string আকারে আছে। যদি বলা হয় কয়টা fruits আছে সেটা string আকারে বের করা যাবে না। 
+`$fruits` variable এর মধ্যে যে ডাটা গুলো আছে সেগুলো string আকারে আছে। যদি বলা হয় এই string এর মধ্যে কয়টা fruit আছে সেটা কিন্তু string আকারে থাকায় বের করা যাবে না। এই কাজ করার জন্য আগে array তে convert করা লাগবে।
 
-এই string data গুলোকে array তে convert করার জন্য `explode()` function ব্যবহার করা হয়।
+### `explode()`
+
+string data গুলোকে array তে convert করার জন্য `explode()` function ব্যবহার করা হয়।
 
 ```php
 $fruitsArray = explode(', ', $fruits);
@@ -200,13 +208,15 @@ echo count($fruitsArray)
 
 - `explode()` function এর 1st argument এ কিসের ভিত্তিতে string গুলো আলাদা হবে সেই separator দিতে হবে।
 
+### `preg_split()`
+
 সমস্যা হচ্ছে, যদি string এর সব জায়গায় separator একই না থাকে। যেমন:
 
 ```php
 $fruits = "Apple, Banana, Mango,Jackfruit, Guava,Dates";
 ```
 
-তাহলে `preg_split()` function ব্যবহার করা লাগবে। যেখানে multiple separator, argument আকারে পাঠানো যায়।;
+তাহলে `preg_split()` function ব্যবহার করা যেতে পারে। যেখানে multiple separator, argument আকারে পাঠানো যায়।;
 
 ```php
 $fruitsArray = preg_split('/, |,/', $fruits);
@@ -214,7 +224,9 @@ $fruitsArray = preg_split('/, |,/', $fruits);
 
 **Array to String**
 
-array কে string এ convert করার জন্য `join()` function ব্যবহার করা যাবে।
+### `join()` or `implode()`
+
+array কে string এ convert করার জন্য `join()` বা `implode()` function ব্যবহার করা যাবে। দুইটা function এর একই কাজ।
 
 ```php
 $drinks = [
@@ -224,12 +236,13 @@ $drinks = [
 ];
 
 $drinksStr = join(', ', $drinks);
+// $drinksStrIm = implode(', ', $drinks); // join() & implode() একই কাজ করে
 echo $drinksStr;
 ```
 
 ## Multidimensional Array or Nested Array
 
-একটা array’র মধ্যে এক বা একাধিক array থাকে।
+একটা array-র মধ্যে এক বা একাধিক array থাকলে তাকে Multidimensional বা Nested Array বলা যায়।
 
 ```php
 $foods = [
@@ -258,12 +271,12 @@ $foods = [
 
 associative array কে সরাসরি database বা অন্য কোথাও store করে রাখা যায় না। store করতে হলে আগে string এ convert করতে হবে।
 
-string এ 2 ভাগে convert করা যায়।
+string এ দুই ভাবে convert করা যায়।
 
 1. serialize 
 2. JSON
 
-**#### Serialize**
+### `serialize()` & `unserialize()`
 
 এটা PHP এর নিজস্ব format। অন্য কোনো language এই format এর data বুঝবে না।
 
@@ -284,7 +297,7 @@ echo $serializedData;
 
 - serialized data কে যদি আবার array তে convert করা লাগে তাহলে, `unserialize()` function ব্যবহার করতে হবে।
 
-#### **JSON**
+### `json_encode()` & `json_decode()`
 
 JavaScript Object Notation (JSON) format এ convert করা বেশি সুবিধাজনক। কারণ, JS সরাসরি এই format read করতে পারে।
 
@@ -303,4 +316,4 @@ echo $jsonData;
 ## print_r (json_decode($jsonData));
 ```
 
-- JSON data কে যদি আবার array তে convert করা লাগে তাহলে, `unserialize()` function ব্যবহার করতে হবে।
+- JSON data কে যদি আবার array তে convert করা লাগে তাহলে, `json_decode()` function ব্যবহার করতে হবে।
