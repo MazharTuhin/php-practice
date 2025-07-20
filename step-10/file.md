@@ -343,3 +343,77 @@ fclose($filePointer);
 ```
 
 - এই ফরম্যাটে save করলে কোনো নির্দিষ্ট ডাটা delete করতে কিছুটা ঝামেলা। আগে `file()` function দিয়ে লাইনগুলোকে array তে convert করে, `unset()` function দিয়ে delete করা যাবে। এর আবার বাকি data গুলো loop চালিয়ে write করা!
+---
+### `Serialize Format`
+
+PHP এর নিজস্ব serialize format এ ও file এ ডাটা save (write) করে রাখা যায় এবং পড়া যায়।
+
+আগের array-টা নিয়েই কাজ করি: 
+
+**File-এ ডাটা রাখা**
+
+```php
+## উপরের $students array-টা ব্যবহার করবো
+$fileName = "D:/code/herd/php/step-10/Data/file.txt";
+
+$data = serialize($students);
+file_put_contents($fileName, $data, LOCK_EX);
+```
+
+- File এর data গুলো serialize করে `$data` তে রেখে সেটা `file_put_contents()` function এর মাধ্যমে `file.txt` তে রাখা হয়েছে।
+
+**File-থেকে পড়া**
+
+```php
+$fileData = file_get_contents($fileName);
+$allStudents = unserialize($fileData);
+print_r($allStudents);
+```
+
+**`$allStudents`** **নির্দিষ্ট কারো ডাটা delete করা**
+
+```php
+unset($allStudents[2]); // offset 2 এর student কে মুছে দিলাম।
+$data = serialize($allStudents); // array-কে serialize করা হলো
+file_put_contents($fileName, $data, LOCK_EX); // file-এ ডাটা রাখা হলোো
+```
+
+**নতুন `student` যুক্ত করতে চাইলে**
+
+```php
+$newStudent = [
+    "Name" => "Ahmed Noor",
+    "Email" => "ahmednoor@gmail.com",
+    "Age" => "15",
+    "Class" => "8"
+];
+
+array_push($allStudents, $newStudent);
+
+$data = serialize($allStudents);
+file_put_contents($fileName, $data, LOCK_EX);
+```
+
+### `JSON Format`
+
+বহুল প্রচলিত এবং JavaScript-এ সরাসরি JSON Format নিয়ে কাজ করা যায়।
+
+**Data গুলোকে JSON-এ convert করে file এ রাখা**
+
+```php
+## উপরের $students array-টা ব্যবহার করবো
+$fileName = "D:/code/herd/php/step-10/Data/file.txt";
+
+$encodedData = json_encode($students);
+file_put_contents($fileName, $encodedData, LOCK_EX);
+```
+
+**JSON থেকে Array তে convert**
+
+```php
+$data = file_get_contents($fileName);
+$allStudents = json_decode($data, true);
+print_r($allStudents);
+```
+
+- `json_decode()` function by default data গুলোকে `object` হিসেবে return করে। যাতে `array` হিসেবে return করে এজন্য `true` pass করা হয়েছে।

@@ -133,21 +133,53 @@ $newStudent = [
 // fputcsv($filePointer, $newStudent);
 // fclose($filePointer);
 
-
-
-
 ################################
 ## Processing with Serialize format
 
-echo filesize($fileName) . " bytes";
+// $data = serialize($students);
+// file_put_contents($fileName, $data, LOCK_EX);
 
-$fileName = "D:/code/herd/php/step-10/Data/file.txt";
-$file2 = "D:/code/herd/php/step-10/Data/file2.txt";
-$newFile = "D:/code/herd/php/step-10/Data/newFile.txt";
+// $fileData = file_get_contents($fileName);
+// $allStudents = unserialize($fileData);
+// print_r($allStudents);
 
-// copy($fileName, $file2);
-// unlink($file2);
+// unset($allStudents[2]);
+// $data = serialize($allStudents);
+// file_put_contents($fileName, $data, LOCK_EX);
 
-rename($file2, $newFile);
+#############################
+## JSON Format
+
+// $encodedData = json_encode($students);
+// file_put_contents($fileName, $encodedData, LOCK_EX);
+
+$data = file_get_contents($fileName);
+$allStudents = json_decode($data, true);
+print_r($allStudents);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// echo filesize($fileName) . " bytes";
+
+// $fileName = "D:/code/herd/php/step-10/Data/file.txt";
+// $file2 = "D:/code/herd/php/step-10/Data/file2.txt";
+// $newFile = "D:/code/herd/php/step-10/Data/newFile.txt";
+
+// // copy($fileName, $file2);
+// // unlink($file2);
+
+// rename($file2, $newFile);
 
 
