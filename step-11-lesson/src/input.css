@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,400;1,600&family=Sen:wght@400..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+    --font-poppins: "Poppins", sans-serif;
+    --font-sen: "Sen", sans-serif;
+    --color-grey: #5F5B53;
+    --color-dark: #171100;
+    --color-primary: #FFB900;
+}
+
+body {
+    @apply font-poppins text-grey;
+}
+
+h1, h2, h3, h4, h5 {
+    @apply font-sen text-dark;
+}
+
+.container {
+  @apply max-w-[1210px] px-5 mx-auto;  
+}
+
+.section-heading {
+    @apply text-[38px] font-bold leading-[126.316%] tracking-[-0.76px] mb-4;
+}

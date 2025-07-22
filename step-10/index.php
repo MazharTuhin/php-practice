@@ -153,9 +153,9 @@ $newStudent = [
 // $encodedData = json_encode($students);
 // file_put_contents($fileName, $encodedData, LOCK_EX);
 
-$data = file_get_contents($fileName);
-$allStudents = json_decode($data, true);
-print_r($allStudents);
+// $data = file_get_contents($fileName);
+// $allStudents = json_decode($data, true);
+// print_r($allStudents);
 
 
 
