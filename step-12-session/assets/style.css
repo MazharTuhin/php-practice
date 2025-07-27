@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", sans-serif;
+    background-color: #BCADE2;
+}
+
+.container {
+    width: 780px;
+    margin: 0 auto;
+    margin-top: 40px;
+}
+
+
+.form-container {
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #F7F2FC;
+}
+
+.form-heading {
+    background-color: #64189E;
+    padding: 30px;
+    text-align: center;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.form-container form {
+    padding: 32px;
+}
+
+form label, 
+form input {
+    display: block;
+    width: 100%;
+}
+
+form label {
+    color: #64189E;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+form input {
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid #DBDDE9;
+    outline: none;
+    padding: 0 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    margin-top: 32px;
+}
+
+.submit-btn button {
+    display: inline-flex;
+    border: none;
+    background-color: #CC115E;
+    cursor: pointer;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 8px 24px;
+    border-radius: 60px;
+    transition: 0.3s;
+}
+
+.submit-btn button:hover {
+    transform: scale(1.1);
+}
+
+/* OUTPUT */
+
+.output-container {
+    margin: 40px 0;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.output-heading {
+    font-size: 20px;
+    background-color: #CC115E;
+    color: #ffffff;
+    text-align: center;
+    padding: 30px;
+}
+
+table {
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #f589b6;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #fde7f0;
+}
+
+th, td {
+    padding: 8px 16px;
+    text-align: center;
+}
+
+
+
