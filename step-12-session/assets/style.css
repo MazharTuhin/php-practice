@@ -123,4 +123,15 @@ th, td {
 }
 
 
+/* ERROR and SUCCESS MESSAGES */
+.error-message {
+    padding-top: 5px;
+    color: red;
+    font-size: 14px;
+}
 
+.success-message {
+    margin-top: 10px;
+    text-align: center;
+    color: green;
+}
