@@ -12,9 +12,8 @@ body {
 }
 
 .container {
-    width: 780px;
-    margin: 0 auto;
-    margin-top: 40px;
+    width: 70%;
+    margin: 40px auto;
 }
 
 
@@ -37,9 +36,13 @@ body {
 }
 
 form label, 
-form input {
+form input,
+select,
+textarea {
     display: block;
     width: 100%;
+    outline: none;
+    border: none;
 }
 
 form label {
@@ -48,12 +51,42 @@ form label {
     font-size: 16px;
 }
 
-form input {
-    height: 40px;
+form input,
+select,
+textarea {
+    padding: 10px;
     border-radius: 5px;
     border: 1px solid #DBDDE9;
     outline: none;
-    padding: 0 10px;
+}
+
+form .gender-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+form div.gender-group label,
+form div.gender-group input {
+    display: inline-block;
+    width: auto;
+    height: auto;
+}
+
+.radio-group label {
+    color: #000;
+}
+
+.radio-group input[type='radio'] {
+    margin-right: 5px;
+    display: inline-block;
+    border: none;
+    padding: 0;
+}
+
+.form-group textarea {
+    padding: 10px;
+    font-family: 'Rubik';
 }
 
 .form-group {
@@ -83,20 +116,41 @@ form input {
 }
 
 /* OUTPUT */
-
 .output-container {
-    margin: 40px 0;
-    background: #ffffff;
-    border-radius: 12px;
+    width: 70%;
+    margin: 40px auto;
+}
+
+.data-container {
+    border-radius: 10px;
     overflow: hidden;
+    background-color: #ffffff;
+}
+
+.output-heading-box {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .output-heading {
     font-size: 20px;
-    background-color: #CC115E;
+}
+
+.add-student-btn {
+    text-decoration: none;
+    background-color: #64189E;
     color: #ffffff;
-    text-align: center;
-    padding: 30px;
+    display: inline-block;
+    padding: 8px 12px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.add-student-btn:hover {
+    background-color: #4e0b82;
 }
 
 table {
@@ -106,7 +160,8 @@ table {
 }
 
 thead {
-    background-color: #f589b6;
+    background-color: #CC115E;
+    color: #ffffff;
 }
 
 tbody tr:nth-child(odd) {
