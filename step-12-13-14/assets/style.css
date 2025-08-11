@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 * {
     margin: 0;
@@ -189,4 +189,39 @@ th, td {
     margin-top: 10px;
     text-align: center;
     color: green;
+}
+
+/* COOKIE BOX */
+.cookie-container {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 400px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #64189E;
+    border-radius: 8px;
+    font-family: 'Hind Siliguri', sans-serif;
+    text-align: justify;
+}
+
+.cookie-btn {
+    text-align: right;
+}
+
+.cookie-btn button {
+    background-color: #64189E;
+    color: #ffffff;
+    padding: 6px 14px;
+    display: inline-block;
+    border: none;
+    border-radius: 2.5px;
+    font-weight: 600;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.cookie-btn button:hover {
+    background-color: #4e0b82;
+    transform: scale(1.1);
 }

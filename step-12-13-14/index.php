@@ -1,3 +1,6 @@
+<?php require_once 'cookie-script.php' ?>
+<?php require_once 'server_script.php' ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +10,6 @@
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-    <?php require_once 'server_script.php' ?>
 
     <div class="container">
         <!-- INPUT -->
@@ -122,6 +123,29 @@
         </div>
     </div>
 
+    <?php if (!isset($_COOKIE['cookie_accepted'])): ?>
+        <!-- COOKIE BOX -->
+        <div class="cookie-container" id="cookie-box">
+            <div class="cookie-content">
+                <p>
+                    cookie ব্যবহারের মাধ্যমে আপনার ব্রাউজারে আমাদের ওয়েবসাইট ব্রাউজের অভিজ্ঞতাকে আরো উন্নত করা হয়। আপনি কি সম্মত আছেন?
+                </p>
+            </div>
+            <div class="cookie-btn">
+                <button onclick="acceptCookie()">Allow</button>
+            </div>
+        </div>
+    <?php endif; ?>
+
+
+    <!-- JS for COOKIE BOX -->
+    <script>
+        function acceptCookie() {
+            fetch('?accept_cookie=true').then(() => {
+                document.getElementById('cookie-box').style.display = 'none';
+            });
+        }
+    </script>
 
 </body>
 </html>
